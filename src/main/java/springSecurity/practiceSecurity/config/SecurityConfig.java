@@ -1,4 +1,25 @@
 package springSecurity.practiceSecurity.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableWebSecurity
 public class SecurityConfig {
+
+    // 등록하고자 하는 시큐리티 빈 등록
+    @Bean
+    public SecurityFilterChain filterChain1(HttpSecurity http) throws Exception{
+        // 필터 구현
+        return http.build();
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception{
+        // 필터 구현
+        return http.build();
+    }
 }
