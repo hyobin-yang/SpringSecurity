@@ -14,12 +14,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain1(HttpSecurity http) throws Exception{
         // 필터 구현
+        http.securityMatchers((auth) -> auth.requestMatchers(("/user"))); // 경로 설정
+        http.authorizeHttpRequests((auth) -> auth.requestMatchers("/user").permitAll());
         return http.build();
     }
 
     @Bean
     public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception{
         // 필터 구현
+        http.securityMatchers((auth) -> auth.requestMatchers(("/admin"))); // 경로 설정
+        http.authorizeHttpRequests((auth) -> auth.requestMatchers("/admin").permitAll());
         return http.build();
     }
 }
