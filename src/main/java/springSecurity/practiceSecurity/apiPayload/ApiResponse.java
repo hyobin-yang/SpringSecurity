@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import springSecurity.practiceSecurity.apiPayload.code.BaseCode;
+import springSecurity.practiceSecurity.apiPayload.code.status.SuccessStatus;
 
 @Getter
 @AllArgsConstructor
@@ -17,13 +19,13 @@ public class ApiResponse<T> {
     private T result; // 어떤 형태의 값이 올지 모르므로 제네릭으로 열기
 
     // 성공 시 응답 생성
-    //public static <T> ApiResponse<T> onSuccess(T result){
-        //return new ApiResponse<>(true, SuccessStatus._OK.getCode(), SuccessStatus._OK.getMessage(), result);
-    //}
+    public static <T> ApiResponse<T> onSuccess(T result){
+        return new ApiResponse<>(true, SuccessStatus._OK.getCode(), SuccessStatus._OK.getMessage(), result);
+    }
 
-    //public static <T> ApiResponse<T> of(BaseCode code, T result){
-        //        return new ApiResponse<>(true, code.getReasonHttpStatus().getCode() , code.getReasonHttpStatus().getMessage(), result);
-//    }
+    public static <T> ApiResponse<T> of(BaseCode code, T result){
+                return new ApiResponse<>(true, code.getReasonHttpStatus().getCode() , code.getReasonHttpStatus().getMessage(), result);
+    }
 
     // 실패 시 응답 생성
     public static <T> ApiResponse<T> onFailure(String code, String message, T data){
