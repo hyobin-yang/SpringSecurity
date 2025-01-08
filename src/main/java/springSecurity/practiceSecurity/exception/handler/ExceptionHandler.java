@@ -3,9 +3,9 @@ package springSecurity.practiceSecurity.exception.handler;
 import springSecurity.practiceSecurity.apiPayload.code.BaseErrorCode;
 import springSecurity.practiceSecurity.exception.GeneralException;
 
-public class ErrorHandler extends GeneralException {
+public class ExceptionHandler extends GeneralException {
 
-    public ErrorHandler(BaseErrorCode errorCode){
+    public ExceptionHandler(BaseErrorCode errorCode){
         super(errorCode);
     }
 }
