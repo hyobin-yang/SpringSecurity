@@ -16,10 +16,9 @@ public enum SuccessStatus implements BaseCode {
 
     // 유저 관련 응답
     SIGN_IN_SUCCESS(HttpStatus.OK, "USER2011", "성공적으로 회원가입되었습니다."),
-    LOGIN_SUCCESS(HttpStatus.OK, "USER2001", "성공적으로 로그인되었습니다."),
-    LOGOUT_SUCCESS(HttpStatus.OK, "USER2002", "성공적으로 로그아웃되었습니다."),
-    USER_EDIT_SUCCESS(HttpStatus.OK, "USER2003", "유저 정보가 성공적으로 변경되었습니다."),
-    USER_SING_OUT_SUCCESS(HttpStatus.OK, "USER2004", "성공적으로 탈퇴되었습니다."),
+    LOGOUT_SUCCESS(HttpStatus.OK, "USER2001", "성공적으로 로그아웃되었습니다."),
+    USER_EDIT_SUCCESS(HttpStatus.OK, "USER2002", "유저 정보가 성공적으로 변경되었습니다."),
+    USER_SING_OUT_SUCCESS(HttpStatus.OK, "USER2003", "성공적으로 탈퇴되었습니다."),
 
     // 관리자 페이지 관련 응답
     ADMIN_LOGIN_SUCCESS(HttpStatus.OK, "ADMIN2011", "[관리자] 성공적으로 로그인되었습니다."),
